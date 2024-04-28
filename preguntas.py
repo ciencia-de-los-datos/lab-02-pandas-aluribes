@@ -179,7 +179,7 @@ def pregunta_10():
     4   E  1:1:2:3:3:4:5:5:5:6:7:8:8:9
     """
 
-    return tbl0.groupby('_c1')['_c2'].apply(lambda x: ':'.join(map(str, sorted(x)))).reset_index()
+    return tbl0.groupby('_c1')['_c2'].apply(lambda x: ':'.join(map(str, sorted(x))))
 
 
 def pregunta_11():
