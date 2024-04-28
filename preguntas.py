@@ -182,7 +182,6 @@ def pregunta_10():
     tabla.set_index('_c1', inplace=True)
     return tabla
 
-#print(pregunta_10())
 
 def pregunta_11():
     """
@@ -218,9 +217,10 @@ def pregunta_12():
     38   38                    eee:0,fff:9,iii:2
     39   39                    ggg:3,hhh:8,jjj:5
     """
-    return
+    tbl2['_c5'] = tbl2['_c5a'].astype(str) + ':' + tbl2['_c5b'].astype(str)
 
-#print(pregunta_12())
+    return tbl2.groupby('_c0')['_c5'].apply(lambda x: ','.join(sorted(map(str, x)))).reset_index()
+
 
 def pregunta_13():
     """
@@ -236,4 +236,7 @@ def pregunta_13():
     E    275
     Name: _c5b, dtype: int64
     """
-    return
+    
+    merged = pd.merge(tbl0, tbl2, on='_c0')
+    
+    return merged.groupby('_c1')['_c5b'].sum()
