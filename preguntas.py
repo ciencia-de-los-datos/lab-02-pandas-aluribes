@@ -7,6 +7,13 @@ Este archivo contiene las preguntas que se van a realizar en el laboratorio.
 Utilice los archivos `tbl0.tsv`, `tbl1.tsv` y `tbl2.tsv`, para resolver las preguntas.
 
 """
+
+
+# python -m venv .venv
+# .venv\Scripts\activate
+# python.exe -m pip install --upgrade pip
+# pip3 install pyarrow pandas
+
 import pandas as pd
 
 tbl0 = pd.read_csv("tbl0.tsv", sep="\t")
@@ -22,8 +29,7 @@ def pregunta_01():
     40
 
     """
-    return
-
+    return len(tbl0)
 
 def pregunta_02():
     """
@@ -33,7 +39,7 @@ def pregunta_02():
     4
 
     """
-    return
+    return tbl0.columns.size
 
 
 def pregunta_03():
@@ -50,7 +56,7 @@ def pregunta_03():
     Name: _c1, dtype: int64
 
     """
-    return
+    return tbl0['_c1'].value_counts().sort_index()
 
 
 def pregunta_04():
@@ -67,6 +73,8 @@ def pregunta_04():
     """
     return
 
+
+print(pregunta_03())
 
 def pregunta_05():
     """
