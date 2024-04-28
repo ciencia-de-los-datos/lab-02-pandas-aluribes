@@ -137,9 +137,8 @@ def pregunta_08():
     39   39   E    5  1998-01-26    44
 
     """
-    return
-
-# print(pregunta_08())
+    tbl0['suma'] = tbl0['_c0'] + tbl0['_c2']
+    return tbl0
 
 def pregunta_09():
     """
@@ -156,7 +155,13 @@ def pregunta_09():
     39   39   E    5  1998-01-26  1998
 
     """
-    return
+
+    fechas = tbl0['_c3'].str.split('-')
+
+    # Tomamos solamente el año (primera columna) y concatenamos en la base inicial
+    tbl0['year'] = [x[0] for x in fechas]
+    
+    return tbl0
 
 
 def pregunta_10():
@@ -175,6 +180,7 @@ def pregunta_10():
     """
     return
 
+#print(pregunta_10())
 
 def pregunta_11():
     """
