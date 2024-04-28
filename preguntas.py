@@ -178,9 +178,9 @@ def pregunta_10():
     3   D                  1:2:3:5:5:7
     4   E  1:1:2:3:3:4:5:5:5:6:7:8:8:9
     """
-    return
 
-#print(pregunta_10())
+    return tbl0.groupby('_c1')['_c2'].apply(lambda x: ':'.join(map(str, sorted(x)))).reset_index()
+
 
 def pregunta_11():
     """
@@ -198,7 +198,7 @@ def pregunta_11():
     38   38      d,e
     39   39    a,d,f
     """
-    return
+    return tbl1.groupby('_c0')['_c4'].apply(lambda x: ','.join(sorted(map(str, x)))).reset_index()
 
 
 def pregunta_12():
@@ -218,6 +218,7 @@ def pregunta_12():
     """
     return
 
+#print(pregunta_12())
 
 def pregunta_13():
     """
